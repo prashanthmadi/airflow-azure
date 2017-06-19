@@ -20,6 +20,9 @@ RUN chmod 755 /bin/init_container.sh
 # Install app dependent modules
 RUN pip install -r /bin/requirements.txt
 
+# initialize the database
+airflow initdb
+
 EXPOSE 80 2222
 
 CMD ["/bin/init_container.sh"]
