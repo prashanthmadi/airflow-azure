@@ -21,7 +21,7 @@ RUN chmod 755 /bin/init_container.sh
 RUN pip install -r /bin/requirements.txt
 
 # initialize the database
-airflow initdb
+RUN airflow initdb
 
 EXPOSE 80 2222
 
