@@ -13,11 +13,12 @@ RUN apt-get update \
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf	
 COPY sshd_config /etc/ssh/
 COPY init_container.sh /bin/
+COPY requirements.txt /bin/
 
 RUN chmod 755 /bin/init_container.sh
   
 # Install app dependent modules
-RUN pip install -r requirements.txt
+RUN pip install -r /bin/requirements.txt
 
 EXPOSE 80 2222
 
